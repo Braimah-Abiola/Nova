@@ -23,8 +23,7 @@ export const SubscriptionButton = ({ isPro = false }: SubscriptionButtonProps) =
 
       window.location.href = response.data.url;
 
-      window.location.href =
-        "https://buy.stripe.com/9AQ7vafvL4j2b2E144";
+      // window.location.href = "https://buy.stripe.com/9AQ7vafvL4j2b2E144";
     } catch (error) {
       toast({
         description: "Something went wrong",
@@ -37,7 +36,7 @@ export const SubscriptionButton = ({ isPro = false }: SubscriptionButtonProps) =
 
   return (
     <Button
-    className="mt-4"
+    className={`mt-4 ${isPro ? 'bg-white text-black hover:bg-gray-400 p-4 text-lg' : ''}`}
       size="sm"
       variant={isPro ? "default" : "premium"}
       disabled={loading}
