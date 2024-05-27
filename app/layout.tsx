@@ -5,6 +5,7 @@ import { ClerkProvider } from "@clerk/nextjs";
 import { cn } from "@/lib/utils";
 import { Toaster } from "@/components/ui/toaster";
 import { ProModal } from "@/components/pro-modal";
+import { Analytics } from "@vercel/analytics/react";
 
 const dmSans = DM_Sans({ subsets: ["latin"] });
 
@@ -33,6 +34,7 @@ export default function RootLayout({
       }}
     >
       <html lang="en" suppressHydrationWarning>
+        <Analytics />
         <body className={cn("bg-[#161616]", dmSans.className)}>
           {children}
           <ProModal />
